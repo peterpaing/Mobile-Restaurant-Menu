@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 600px;
+    height:116px;
+    font-family: "Smythe", system-ui;
+}
+
+header{
+    background-image: url("backgroundImage.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 167px;
+}
+
+h1 ,header p{
+    color:#FFFFFF;
+    padding-left: 46px;
+}
+
+h1{
+    font-size: 39px;
+    color:#FFFFFF;
+    padding-top: 46px;
+    margin-bottom: 19px;
+    line-height:24px;
+}
+
+header p{
+    font-size:22.42px;
+    color:#FFFFFF;
+    margin-bottom: 70px; ;
+    line-height:14px;
+}
+
