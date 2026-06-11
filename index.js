@@ -12,8 +12,8 @@ function render() {
 
                 <div class="price-text">
                     <h2>${posts.foodName}</h2>
-                    <p>${posts.ingredients}</p>
-                    <p class="price">$${posts.price}</p>
+                    <p class="price">${posts.ingredients}</p>
+                    <p >$${posts.price}</p>
                 </div>
 
                 <div class="addCart">+</div>
