@@ -38,6 +38,23 @@ header p{
     line-height:14px;
 }
 
+main {
+    margin: 67px 46px 0 46px;
+}
+
+.food-card{
+   padding-bottom: 51px;
+    border-bottom: 1px solid #D2D2D2;
+}
+
+.food-card:not(:first-child){
+    padding-top: 45px;
+}
+
+.container{
+    align-items: center;
+}
+
 .food-container{
     display: flex;
     align-items: center;
@@ -67,6 +84,7 @@ h2{
 }
 
 .addCart{
+    font-family: 'Inter';
     font-size: 32px;
     text-align: center;
     border: 1px solid #DEDEDE;
@@ -75,19 +93,11 @@ h2{
     border-radius: 50%;
     display: block;
     margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
 }
 
-main {
-    margin: 67px 46px 0 46px;
-}
 
-.food-card{
-    padding-bottom: 51px;
-    border-bottom: 1px solid #D2D2D2;
-}
-
-.container{
-    align-items: center;
-}
 
 
