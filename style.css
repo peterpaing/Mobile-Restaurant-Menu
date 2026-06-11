@@ -94,3 +94,46 @@ h2 {
     justify-content: center;
     align-items: center;  
 }
+
+/* --- Mobile Responsive --- */
+@media (max-width: 480px) {
+   
+    main {
+        margin: 40px 20px 0 20px;
+    }
+
+   h1, header p {
+        padding-left: 20px;
+    }
+
+   h1 {
+        font-size: 32px;
+        padding-top: 30px;
+    }
+
+    header p {
+        font-size: 18px;
+    }
+
+    .food-container {
+        gap: 15px;
+    }
+
+   .food-image {
+        font-size: 55px; 
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .price-text p {
+        font-size: 18px;
+    }
+
+   .addCart {
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+    }
+}
