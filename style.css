@@ -38,5 +38,34 @@ header p{
     line-height:14px;
 }
 
+.food-container{
+    display: flex;
+}
+
+.food-image{
+    font-size: 70px;
+}
+
+h2{
+    font-size: 28px;
+}
+
+.price-text p{
+    font-size: 16px;
+}
+
+.price{
+    font-size: 20px;
+}
+
+.addCart{
+    font-size: 32px;
+    text-align: center;
+    border: 1px solid #DEDEDE;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
 
 
