@@ -1,4 +1,4 @@
-const menu = [
+export const menu = [
     {foodName : 'Pizza' ,
      ingredients: 'pepperoni,mushrom,mozarella',
      price: 14 ,
