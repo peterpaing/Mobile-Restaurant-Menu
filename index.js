@@ -4,7 +4,11 @@ document.addEventListener('click' , function(e){
   if(e.target.dataset.item){
     selectItem(e.target.dataset.item)
     document.getElementById('container').innerHTML = render()
+  }else if(e.target.dataset.remove){
+    removeItem(e.target.dataset.remove)
+     document.getElementById('container').innerHTML = render()
   }
+
 })
 
 const storeSelectedItem=[]
@@ -41,10 +45,10 @@ function render() {
 
     let selectedItem = ''
      if(storeSelectedItem.length){
-         selectedItem = `<h2>Your order</h2>${storeSelectedItem.map(item=>
+         selectedItem = `<h2>Your order</h2>${storeSelectedItem.map((item, index)=>
             `<div class="selectedItem">
             <p class="selectItem">${item.foodName}</p>
-            <button class="remove">remove</button>
+            <button class="remove" data-remove="${index}">remove</button>
             </div>
              <p class="itemPrice">$${item.price}</p>
              `
@@ -57,10 +61,14 @@ function render() {
         <p>$${storeSelectedItem.reduce((current ,total)=> current+total.price,0)}</p>
         </div>
         
-        <button class="completeOrder">Complete order</button>`
+        <button class="comfirm">Complete order</button>`
      }
 
      return renderItem + selectedItem
 }
 
 document.getElementById('container').innerHTML = render()
+
+function removeItem(itemIndex){
+ storeSelectedItem.splice(itemIndex,1)
+}
