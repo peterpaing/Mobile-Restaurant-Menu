@@ -1,8 +1,25 @@
 import { menu } from "./data.js";
 
+document.addEventListener('click' , function(e){
+  if(e.target.dataset.item){
+    selectItem(e.target.dataset.item)
+    document.getElementById('container').innerHTML = render()
+  }
+})
+
+const storeSelectedItem=[]
+
+function selectItem(itemId){
+    const findSelect=menu.filter(function(item){
+        return itemId === item.uuid
+    })[0]
+           if(findSelect){
+     storeSelectedItem.push(findSelect)
+    }
+}
 
 function render() {
-    return menu.map(posts => `
+    const renderItem = menu.map(posts => `
         <section class="food-card">
             <div class="food-container">
 
@@ -16,11 +33,23 @@ function render() {
                     <p >$${posts.price}</p>
                 </div>
 
-                <div class="addCart">+</div>
+                <button class="addCart" data-item="${posts.uuid}" type="submit">+</button>
 
             </div>
         </section>
-    `).join('');
+    `).join('')
+
+    let selectedItem = ''
+     if(storeSelectedItem.length){
+         selectedItem = `<h2>Your order</h2>${storeSelectedItem.map(item=>
+            `<div class="selectedItem">
+            <p class="selectItem">${item.foodName}</p>
+             <p class="itemPrice">${item.price}</p>
+             </div>`
+        ).join('')}`
+     }
+
+     return renderItem + selectedItem
 }
 
 document.getElementById('container').innerHTML = render()
