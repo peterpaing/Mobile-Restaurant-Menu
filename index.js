@@ -44,9 +44,20 @@ function render() {
          selectedItem = `<h2>Your order</h2>${storeSelectedItem.map(item=>
             `<div class="selectedItem">
             <p class="selectItem">${item.foodName}</p>
-             <p class="itemPrice">${item.price}</p>
-             </div>`
-        ).join('')}`
+            <button class="remove">remove</button>
+            </div>
+             <p class="itemPrice">$${item.price}</p>
+             `
+        ).join('')}
+
+        <hr>
+
+        <div class="totalPrice">
+        <h3>Total price:</h3>
+        <p>$${storeSelectedItem.reduce((current ,total)=> current+total.price,0)}</p>
+        </div>
+        
+        <button class="completeOrder">Complete order</button>`
      }
 
      return renderItem + selectedItem
