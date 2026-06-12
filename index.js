@@ -43,26 +43,32 @@ function render() {
         </section>
     `).join('')
 
-    let selectedItem = ''
-     if(storeSelectedItem.length){
-         selectedItem = `<h2>Your order</h2>${storeSelectedItem.map((item, index)=>
-            `<div class="selectedItem">
-            <p class="selectItem">${item.foodName}</p>
-            <button class="remove" data-remove="${index}">remove</button>
+   let selectedItem = ''
+
+    if (storeSelectedItem.length) {
+        const totalPrice = storeSelectedItem.reduce((sum, item) => sum + item.price, 0)
+
+        selectedItem = `
+            <h2>Your order</h2>
+
+            ${storeSelectedItem.map((item, index) => `
+                <div class="selectedItem">
+                    <p class="selectItem">${item.foodName}</p>
+                    <p class="itemPrice">$${item.price}</p>
+                    <button class="remove" data-remove="${index}">remove</button>
+                </div>
+            `).join('')}
+
+            <hr>
+
+            <div class="totalPrice">
+                <h3>Total price:</h3>
+                <p>$${totalPrice}</p>
             </div>
-             <p class="itemPrice">$${item.price}</p>
-             `
-        ).join('')}
 
-        <hr>
-
-        <div class="totalPrice">
-        <h3>Total price:</h3>
-        <p>$${storeSelectedItem.reduce((current ,total)=> current+total.price,0)}</p>
-        </div>
-        
-        <button class="comfirm">Complete order</button>`
-     }
+            <button class="comfirm">Complete order</button>
+        `
+    }
 
      return renderItem + selectedItem
 }
