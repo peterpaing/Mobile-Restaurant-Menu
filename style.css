@@ -212,4 +212,55 @@ hr{
         height: 40px;
         font-size: 24px;
     }
+
+    h3 {
+        margin-top: 24px;
+        font-size: 22px;
+        margin-bottom: 32px;
+    }
+
+    .selectedItem {
+    display: flex; 
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+    .selectedItem h4 {
+        font-size: 20px;
+        line-height: normal; 
+        margin: 0; 
+    }
+
+    .selectedItem p {
+        font-size: 16px;
+        margin: auto 0 0 auto;
+    }
+
+    .remove {
+        font-size: 14px;
+        padding: 8px 0; 
+        
+    }
+
+    hr {
+        margin-top: 24px;
+        margin-bottom: 12px;
+    }
+
+    .totalPrice h4 {
+        font-size: 22px;
+    }
+
+    .totalPrice p {
+        font-size: 18px;
+    }
+
+    .comfirm {
+        margin-top: 32px;
+        margin-bottom: 32px;
+        padding-top: 14px;
+        padding-bottom: 14px;
+        font-size: 16px; 
+    }
 }
