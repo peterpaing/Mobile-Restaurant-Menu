@@ -8,7 +8,6 @@ document.addEventListener('click' , function(e){
     removeItem(e.target.dataset.remove)
      document.getElementById('container').innerHTML = render()
   }
-
 })
 
 const storeSelectedItem=[]
@@ -49,20 +48,20 @@ function render() {
         const totalPrice = storeSelectedItem.reduce((sum, item) => sum + item.price, 0)
 
         selectedItem = `
-            <h2>Your order</h2>
+            <h3>Your order</h3>
 
             ${storeSelectedItem.map((item, index) => `
                 <div class="selectedItem">
-                    <p class="selectItem">${item.foodName}</p>
-                    <p class="itemPrice">$${item.price}</p>
+                    <h4 class="selectItem">${item.foodName}</h4>
                     <button class="remove" data-remove="${index}">remove</button>
-                </div>
+                    <p class="itemPrice">$${item.price}</p>
+                 </div>
             `).join('')}
 
             <hr>
 
             <div class="totalPrice">
-                <h3>Total price:</h3>
+                <h4>Total price:</h3>
                 <p>$${totalPrice}</p>
             </div>
 
