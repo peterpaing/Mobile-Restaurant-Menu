@@ -191,6 +191,7 @@ hr{
 }
 
 .input-container{
+    display: block;
     width:524px;
     height:542.24px;
     position: absolute;
@@ -335,32 +336,5 @@ input::-webkit-inner-spin-button {
         padding-bottom: 14px;
         font-size: 16px; 
     }
-  .input-container {
-        width: 90%;
-        height: auto; 
-        padding-bottom: 40px; 
-        
-        
-        left: 5%; 
-        top: 200px; 
-    }
-
-    .input-container h4 {
-        font-size: 20px;
-        margin-top: 30px;
-        margin-bottom: 30px;
-    }
-
-    input {
-        width: 90%; 
-        height: 60px; 
-        font-size: 16px; 
-        padding-left: 15px;
-    }
-
-    .payBtn {
-        width: 90%;
-        height: 60px;
-        font-size: 18px;
-    }  
+   
 }
