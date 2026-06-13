@@ -7,7 +7,9 @@ document.addEventListener('click' , function(e){
   }else if(e.target.dataset.remove){
     removeItem(e.target.dataset.remove)
      document.getElementById('container').innerHTML = render()
-  }
+  } else if (e.target.classList.contains('comfirm')) {
+        showPaymentForm()
+    }
 })
 
 const storeSelectedItem=[]
@@ -76,4 +78,17 @@ document.getElementById('container').innerHTML = render()
 
 function removeItem(itemIndex){
  storeSelectedItem.splice(itemIndex,1)
+}
+
+function showPaymentForm() {
+    document.getElementById('payment').innerHTML += `
+        <div class="input-container">
+            <h4>Enter card details</h4>
+            <form>
+                <input type="text" name="name" required placeholder="Enter your name">
+                <input type="number" name="card-number" required placeholder="Enter card number">
+                <input type="number" name="card-cvc" required placeholder="Enter CVV">
+            </form>
+        </div>
+    `
 }
