@@ -15,6 +15,7 @@ body {
     margin: 0 auto; 
     font-family: "Smythe", system-ui;
     background-color: #FFFFFF;
+    position: relative;
 }
 
 header {
@@ -168,7 +169,7 @@ hr{
     font-size: 20px;
 }
 
-.comfirm{
+.comfirmBtn{
     margin-top: 53px;
     margin-bottom: 53px;
     background-color: #16DB99;
@@ -183,9 +184,63 @@ hr{
     font-weight: 700;
 }
 
-.comfirm:hover , .comfirm:focus{
+.comfirmBtn:hover , .comfirmBtn:focus ,.payBtn:hover ,.payBtn:focus
+{
     background-color: #12B97F;
     cursor: pointer;
+}
+
+.input-container{
+    width:524px;
+    height:542.24px;
+    position: absolute;
+    top:292px;
+    left:38px;
+    border-radius:3.89px;
+    background-color: #FFFFFF;
+    box-shadow: 3px 3px 20.44px #757575;
+}
+
+.input-container h4{
+    font-family: Verdana;
+    font-weight: 700;
+    font-size: 24px;
+    margin-top: 47px;
+    margin-bottom: 46px;
+    text-align: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+    align-items: center;
+}
+
+input{
+    width: 476px;
+    height: 71px;
+    border-radius: 3.89px;
+    border: 1.3px solid #757575;
+    font-family: Verdana;
+    font-size: 20px;
+    padding-left: 26.5px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.payBtn{
+    background-color: #16DB99;
+    color: #FFFFFF;
+    width:476px;
+    height: 71px;
+    border: none;
+    border-radius: 3.89px;
+    font-size:20px;
+    font-weight: 700;
 }
 
 /* --- Mobile Responsive --- */
@@ -273,11 +328,12 @@ hr{
         font-size: 18px;
     }
 
-    .comfirm {
+    .comfirmBtn {
         margin-top: 32px;
         margin-bottom: 32px;
         padding-top: 14px;
         padding-bottom: 14px;
         font-size: 16px; 
     }
+   
 }

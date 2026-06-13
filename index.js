@@ -7,7 +7,7 @@ document.addEventListener('click' , function(e){
   }else if(e.target.dataset.remove){
     removeItem(e.target.dataset.remove)
      document.getElementById('container').innerHTML = render()
-  } else if (e.target.classList.contains('comfirm')) {
+  } else if (e.target.classList.contains('comfirmBtn')) {
         showPaymentForm()
     }
 })
@@ -67,7 +67,7 @@ function render() {
                 <p>$${totalPrice}</p>
             </div>
 
-            <button class="comfirm">Complete order</button>
+            <button class="comfirmBtn">Complete order</button>
         `
     }
 
@@ -88,6 +88,7 @@ function showPaymentForm() {
                 <input type="text" name="name" required placeholder="Enter your name">
                 <input type="number" name="card-number" required placeholder="Enter card number">
                 <input type="number" name="card-cvc" required placeholder="Enter CVV">
+                <button class="payBtn">Pay</button>
             </form>
         </div>
     `
