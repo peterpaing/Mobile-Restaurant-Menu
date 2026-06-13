@@ -9,7 +9,9 @@ document.addEventListener('click' , function(e){
      document.getElementById('container').innerHTML = render()
   } else if (e.target.classList.contains('comfirmBtn')) {
         showPaymentForm()
-    }
+    }else if (e.target.classList.contains('payBtn')) {
+        successPayment()
+}
 })
 
 const storeSelectedItem=[]
@@ -50,10 +52,10 @@ function render() {
         const totalPrice = storeSelectedItem.reduce((sum, item) => sum + item.price, 0)
 
         selectedItem = `
+         <div class="order-container">
             <h3>Your order</h3>
-
-            ${storeSelectedItem.map((item, index) => `
-                <div class="selectedItem">
+                 ${storeSelectedItem.map((item, index) => `
+                 <div class="selectedItem">
                     <h4 class="selectItem">${item.foodName}</h4>
                     <button class="remove" data-remove="${index}">remove</button>
                     <p class="itemPrice">$${item.price}</p>
@@ -63,11 +65,12 @@ function render() {
             <hr>
 
             <div class="totalPrice">
-                <h4>Total price:</h3>
+                <h4>Total price:</h4>
                 <p>$${totalPrice}</p>
             </div>
 
             <button class="comfirmBtn">Complete order</button>
+            </div>
         `
     }
 
@@ -81,15 +84,26 @@ function removeItem(itemIndex){
 }
 
 function showPaymentForm() {
-    document.getElementById('payment').innerHTML += `
+    document.getElementById('payment').innerHTML = `
         <div class="input-container">
             <h4>Enter card details</h4>
             <form>
-                <input type="text" name="name" required placeholder="Enter your name">
+                <input type="text" name="name" id="name"required placeholder="Enter your name">
                 <input type="number" name="card-number" required placeholder="Enter card number">
                 <input type="number" name="card-cvc" required placeholder="Enter CVV">
-                <button class="payBtn">Pay</button>
+                <button type="button" class="payBtn">Pay</button>
             </form>
         </div>
+    `
+}
+
+function successPayment() {
+    const username = document.getElementById('name').value
+
+    document.querySelector('.order-container').style.display = "none"
+    document.querySelector('.input-container').style.display = "none"
+
+    document.getElementById('thank-you').innerHTML = `
+        <h5>Thanks, ${username}! Your order is on its way!</h5>
     `
 }
